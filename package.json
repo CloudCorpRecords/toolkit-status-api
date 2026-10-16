@@ -1,0 +1,12 @@
+{
+  "name": "toolkit-status-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless API on Vercel reporting live npm, MCP Registry, and GitHub status for the Greenlight open source toolkit.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "dev": "node src/local-server.ts"
+  },
+  "engines": { "node": ">=22" }
+}
