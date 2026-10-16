@@ -1,5 +1,5 @@
-import { jsonResponse } from "../src/lib/format.ts";
-import { getGithubPrCounts, GITHUB_USER } from "../src/lib/upstream.ts";
+import { jsonResponse } from "./_lib/format.ts";
+import { getGithubPrCounts, GITHUB_USER } from "./_lib/upstream.ts";
 
 export const config = { runtime: "edge" };
 

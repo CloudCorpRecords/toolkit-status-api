@@ -1,5 +1,5 @@
-import { jsonResponse } from "../src/lib/format.ts";
-import { getToolkitStatus } from "../src/lib/upstream.ts";
+import { jsonResponse } from "./_lib/format.ts";
+import { getToolkitStatus } from "./_lib/upstream.ts";
 
 export const config = { runtime: "edge" };
 

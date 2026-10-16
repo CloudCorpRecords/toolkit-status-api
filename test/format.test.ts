@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { formatGithubSearch, formatNpmPackument } from "../src/lib/format.ts";
+import { formatGithubSearch, formatNpmPackument } from "../api/_lib/format.ts";
 
 test("formatNpmPackument extracts the latest dist-tag", () => {
   const out = formatNpmPackument("@reneturcios/greenlight", {

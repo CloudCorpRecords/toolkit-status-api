@@ -1,4 +1,4 @@
-import { jsonResponse } from "../src/lib/format.ts";
+import { jsonResponse } from "./_lib/format.ts";
 
 export const config = { runtime: "edge" };
 

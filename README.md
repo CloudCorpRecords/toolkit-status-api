@@ -22,8 +22,8 @@ curl https://toolkit-status-api.vercel.app/api/github
 ## Architecture
 
 - `api/*.ts` : Vercel Edge Functions (web standard `Request`/`Response`, `runtime: "edge"`)
-- `src/lib/format.ts` : pure formatting helpers, unit tested
-- `src/lib/upstream.ts` : upstream fetchers for the npm registry and GitHub APIs
+- `api/_lib/format.ts` : pure formatting helpers, unit tested
+- `api/_lib/upstream.ts` : upstream fetchers for the npm registry and GitHub APIs
 - `src/local-server.ts` : local dev harness that serves the same handlers over `node:http`
 - `public/index.html` : static landing page, also served by Vercel
 
