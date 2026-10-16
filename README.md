@@ -21,9 +21,8 @@ curl https://toolkit-status-api.vercel.app/api/github
 
 ## Architecture
 
-- `api/*.ts` : Vercel Edge Functions (web standard `Request`/`Response`, `runtime: "edge"`)
-- `api/_lib/format.ts` : pure formatting helpers, unit tested
-- `api/_lib/upstream.ts` : upstream fetchers for the npm registry and GitHub APIs
+- `api/*.ts` : Vercel Edge Functions (web standard `Request`/`Response`, `runtime: "edge"`). Each function is intentionally self-contained in a single file with no cross-file imports: the deployment pipeline bundles each function independently, and single-file functions are the portable serverless pattern (the same shape AWS Lambda and Cloudflare Workers expect).
+- `test/handlers.test.ts` : tests call the actual exported handlers with stubbed upstream fetches, so what is tested is exactly what is deployed
 - `src/local-server.ts` : local dev harness that serves the same handlers over `node:http`
 - `public/index.html` : static landing page, also served by Vercel
 
