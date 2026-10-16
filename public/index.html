@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toolkit Status API</title>
+<style>body{font-family:system-ui,sans-serif;max-width:44rem;margin:3rem auto;padding:0 1rem;line-height:1.55}code{background:#f2f2f2;padding:.1rem .35rem;border-radius:.3rem}pre{background:#111;color:#eee;padding:1rem;border-radius:.5rem;overflow:auto}</style>
+</head>
+<body>
+<h1>Toolkit Status API</h1>
+<p>A small serverless API running on Vercel Edge Functions (TypeScript, zero infrastructure to manage). It reports live status for the Greenlight open source toolkit: npm package versions and GitHub pull request counts, fetched from public upstream APIs at request time.</p>
+<h2>Endpoints</h2>
+<ul>
+<li><code>GET /api/health</code> &mdash; service health and runtime</li>
+<li><code>GET /api/toolkit</code> &mdash; latest npm versions for @reneturcios/greenlight, prwatch, claimcheck, gatefile</li>
+<li><code>GET /api/github</code> &mdash; live authored PR counts for CloudCorpRecords</li>
+</ul>
+<h2>Try it</h2>
+<pre id="out">Loading /api/toolkit ...</pre>
+<script>
+fetch('/api/toolkit').then(r=>r.json()).then(d=>{document.getElementById('out').textContent=JSON.stringify(d,null,2)}).catch(e=>{document.getElementById('out').textContent=String(e)});
+</script>
+<p>Source: <a href="https://github.com/CloudCorpRecords/toolkit-status-api">github.com/CloudCorpRecords/toolkit-status-api</a></p>
+</body>
+</html>
